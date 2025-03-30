@@ -9,7 +9,8 @@ const Sidebar = () => {
     localStorage.getItem("darkMode") === "true"
   );
 
-  const { onSent, prevPrompts, setRecentPrompts, newChat } = useContext(Context);
+  const { onSent, prevPrompts, setRecentPrompts, newChat } =
+    useContext(Context);
 
   const loadPrompt = async (prompt) => {
     setRecentPrompts(prompt);

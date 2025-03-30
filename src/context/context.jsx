@@ -15,12 +15,12 @@ const ContextProvider = (props) => {
     setTimeout(() => {
       setResultData((prev) => prev + nextWord);
     }, 75 * index);
-  }
+  };
 
   const newChat = () => {
-     setLoading(false);
-     setShowResults(false);
-  }
+    setLoading(false);
+    setShowResults(false);
+  };
 
   const onSent = async (prompt) => {
     setResultData("");
@@ -73,7 +73,7 @@ const ContextProvider = (props) => {
     resultData,
     input,
     setInput,
-    newChat
+    newChat,
   };
 
   return (

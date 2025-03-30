@@ -5,8 +5,7 @@ import App from "./App";
 import ContextProvider from "./context/context";
 
 createRoot(document.getElementById("root")).render(
-    <ContextProvider>
-      <App />
-    </ContextProvider>
-
+  <ContextProvider>
+    <App />
+  </ContextProvider>
 );

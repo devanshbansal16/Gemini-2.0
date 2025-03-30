@@ -1,135 +1,180 @@
-.sidebar
-{
-  min-height: 100vh;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #f0f4f9;
-  padding: 25px 15px;
+.sidebar {  
+  min-height: 100vh;  
+  display: inline-flex;  
+  flex-direction: column;  
+  justify-content: space-between;  
+  background-color: #f0f4f9;  
+  padding: 25px 15px;  
+  transition: transform 0.3s ease-in-out;  
+  position: relative;  
+}  
 
-}
-.sidebar img{
-   width: 20px;
-}
-.sidebar .menu
-{
-   display: block;
-   margin-left: 10px;
-   cursor: pointer;
-}
-.sidebar .new-chat
-{
-    margin-top: 50px;
-    display:  inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
-    background-color: #e6eaf1;
-    border-radius: 50px;
-    font-size: 14px;
-    color: grey;
-    cursor: pointer;
-}
-.sidebar .recent
-{
-  display: flex;
-  flex-direction: column;
-  animation: fadeIn 1.5s;
-}
-.sidebar .recent-title
-{
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-.sidebar .recent-entry
-{
-  display: flex;
-  align-items:start;
-  gap: 10px;
-  padding: 10px;
-  padding-right: 10px;
-  border-radius: 50px;
-  color: #282828;
-  cursor: pointer;
-}
-.sidebar .recent-entry:hover
-{
-   background-color: #e2e6eb;
-}
-.sidebar .bottom
-{
-   display: flex;
-   flex-direction: column;
-}
-.sidebar .bottom-item
-{
-  padding-right: 10px;
-   cursor: pointer;
-}
-@media (max-width: 600px) {
-   .sidebar{
-      display: none;
-   }
-}
-/* Dark mode styles */
-.dark-mode {
-   background-color: #121212;
-   color: white;
- }
- 
- /* Apply dark mode to specific elements */
- .dark-mode .sidebar {
-   background-color: black;
- }
- 
- .dark-mode .main {
-   background-color: #181818;
-   color: white;
- }
- 
- .dark-mode .search-box {
-   background-color: #222;
- }
- 
- .dark-mode .card {
-   background-color: #333;
- }
- 
- .dark-mode .card:hover {
-   background-color: #444;
- }
- .sidebar.dark {
-   background-color: #1e1e1e; /* Dark background */
-   color: white; /* Ensuring text is white */
- }
- 
- .sidebar.dark .recent-entry {
-   color: white;
- }
- 
- .sidebar.dark .recent-entry:hover {
-   background-color: #333; /* Slightly lighter background on hover */
- }
-/* Default input text color */
-.search-box input {
-   color: black; /* Light mode */
- }
- 
- /* When dark mode is active */
- .sidebar.dark .search-box input {
-   color: white; /* White text in dark mode */
- }
- 
- .sidebar.dark .search-box {
-   background-color:  black;
-   border: 1px solid #555; /* Slight border to distinguish */
- }
- 
- .sidebar.dark .search-box input::placeholder {
-   color: #ccc; /* Lighter placeholder text */
- }
- .main.dark {
-   background-color: #121212; /* Dark background */
-   color: white;
- }
-   
+.sidebar img {  
+  width: 20px;  
+}  
+
+.sidebar .menu {  
+  display: block;  
+  margin-left: 10px;  
+  cursor: pointer;  
+}  
+
+.sidebar .new-chat {  
+  margin-top: 50px;  
+  display: inline-flex;  
+  align-items: center;  
+  gap: 10px;  
+  padding: 10px 15px;  
+  background-color: #e6eaf1;  
+  border-radius: 50px;  
+  font-size: 14px;  
+  color: grey;  
+  cursor: pointer;  
+}  
+
+.sidebar .recent {  
+  display: flex;  
+  flex-direction: column;  
+  animation: fadeIn 1.5s;  
+}  
+
+.sidebar .recent-title {  
+  margin-top: 30px;  
+  margin-bottom: 20px;  
+}  
+
+.sidebar .recent-entry {  
+  display: flex;  
+  align-items: start;  
+  gap: 10px;  
+  padding: 10px;  
+  padding-right: 10px;  
+  border-radius: 50px;  
+  color: #282828;  
+  cursor: pointer;  
+}  
+
+.sidebar .recent-entry:hover {  
+  background-color: #e2e6eb;  
+}  
+
+.sidebar .bottom {  
+  display: flex;  
+  flex-direction: column;  
+}  
+
+.sidebar .bottom-item {  
+  padding-right: 10px;  
+  cursor: pointer;  
+}  
+
+@media (max-width: 600px) {  
+  .sidebar {  
+    display: none;  
+    position: absolute;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100vh;  
+    background-color: #f0f4f9;  
+    padding: 10px 15px;  
+  }  
+
+  .sidebar.open {  
+    display: inline-flex;  
+  }  
+
+  .sidebar .menu {  
+    display: inline-flex;  
+  }  
+}  
+
+@media (max-width: 900px) {  
+  .sidebar {  
+    display: inline-flex;  
+    flex-direction: row;  
+    padding: 20px 15px;  
+    gap: 15px;  
+    position: fixed;  
+    top: 0;  
+    left: 0;  
+    height: 100vh;  
+    background-color: #f0f4f9;  
+    width: 250px;  
+  }  
+
+  .sidebar .menu {  
+    margin-left: 0;  
+  }  
+}  
+
+.dark-mode {  
+  background-color: #121212;  
+  color: white;  
+}  
+
+.dark-mode .sidebar {  
+  background-color: black;  
+}  
+
+.dark-mode .main {  
+  background-color: #181818;  
+  color: white;  
+}  
+
+.dark-mode .search-box {  
+  background-color: #222;  
+}  
+
+.dark-mode .card {  
+  background-color: #333;  
+}  
+
+.dark-mode .card:hover {  
+  background-color: #444;  
+}  
+
+.sidebar.dark {  
+  background-color: #1e1e1e;  
+  color: white;  
+}  
+
+.sidebar.dark .recent-entry {  
+  color: white;  
+}  
+
+.sidebar.dark .recent-entry:hover {  
+  background-color: #333;  
+}  
+
+.search-box input {  
+  color: black;  
+}  
+
+.sidebar.dark .search-box input {  
+  color: white;  
+}  
+
+.sidebar.dark .search-box {  
+  background-color: black;  
+  border: 1px solid #555;  
+}  
+
+.sidebar.dark .search-box input::placeholder {  
+  color: #ccc;  
+}  
+
+@media (max-width: 600px) {  
+  .sidebar.open.dark {  
+    background-color: #121212;  
+    color: white;  
+  }  
+
+  .sidebar.open .recent-entry {  
+    color: white;  
+  }  
+
+  .sidebar.open .recent-entry:hover {  
+    background-color: #333;  
+  }  
+}  
