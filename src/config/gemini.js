@@ -3,7 +3,7 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/ge
 // NEVER expose API keys in frontend code! Use environment variables instead.
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY; 
 
-const genAI = new GoogleGenerativeAI("AIzaSyAEsfaj0TX-mZCHHJFF8L5OPUObT4UH0y0");
+const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash",
